@@ -16,8 +16,6 @@ from .permissions import IsOwnerOrReadOnly
 from .renderers import ArticleJSONRenderer, ArticlesJSONRenderer
 from .serializers import ArticleSerializer, ClapSerializer
 
-
-
 User = get_user_model()
 
 logger = logging.getLogger(__name__)
