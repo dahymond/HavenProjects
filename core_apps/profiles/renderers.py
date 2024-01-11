@@ -24,4 +24,4 @@ class ProfilesJSONRenderer(JSONRenderer):
 
         if errors is not None:
             return super(ProfilesJSONRenderer, self).render(data)
-        return json.dumps({"status_code": status_code, "profiles": data}) 
+        return json.dumps({"status_code": status_code, "profiles": data})

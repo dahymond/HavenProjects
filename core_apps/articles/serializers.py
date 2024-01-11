@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
 from core_apps.articles.models import Article, ArticleView, Clap
-from core_apps.profiles.serializers import ProfileSerializer
 from core_apps.bookmarks.models import Bookmark
 from core_apps.bookmarks.serializers import BookmarkSerializer
+from core_apps.profiles.serializers import ProfileSerializer
 from core_apps.responses.serializers import ResponseSerializer
 
 
@@ -49,13 +49,12 @@ class ArticleSerializer(serializers.ModelSerializer):
     def get_bookmarks(self, obj):
         bookmarks = Bookmark.objects.filter(article=obj)
         return BookmarkSerializer(bookmarks, many=True).data
-    
+
     def get_bookmarks_count(self, obj):
         return Bookmark.objects.filter(article=obj).count()
 
     def get_average_rating(self, obj):
         return obj.average_rating()
-
 
     def get_views(self, obj):
         return ArticleView.objects.filter(article=obj).count()

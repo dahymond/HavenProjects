@@ -8,6 +8,7 @@ from rest_framework import serializers
 
 User = get_user_model()
 
+
 class UserSerializer(serializers.ModelSerializer):
     gender = serializers.CharField(source="profile.gender")
     phone_number = PhoneNumberField(source="profile.phone_number")
@@ -34,6 +35,7 @@ class UserSerializer(serializers.ModelSerializer):
         if instance.is_superuser:
             representation["admin"] = True
         return representation
+
 
 class CustomRegisterSerializer(RegisterSerializer):
     username = None

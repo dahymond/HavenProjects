@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-from pathlib import Path
 from datetime import timedelta
+from pathlib import Path
+
 import environ
 
 env = environ.Env()
@@ -37,8 +38,8 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    "django_filters", 
-    "django_countries", 
+    "django_filters",
+    "django_countries",
     "phonenumbers",
     "phonenumber_field",
     "drf_yasg",
@@ -56,15 +57,14 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-     "core_apps.profiles", 
-     "core_apps.common", 
-     "core_apps.users",
-     "core_apps.articles",
-     "core_apps.ratings",
-     "core_apps.bookmarks",
-     "core_apps.responses",
-     "core_apps.search",
-
+    "core_apps.profiles",
+    "core_apps.common",
+    "core_apps.users",
+    "core_apps.articles",
+    "core_apps.ratings",
+    "core_apps.bookmarks",
+    "core_apps.responses",
+    "core_apps.search",
 ]
 
 
@@ -164,7 +164,6 @@ MEDIA_ROOT = str(ROOT_DIR / "mediafiles")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_URLS_REGEX = r"^api/.*$"
-
 
 
 AUTH_USER_MODEL = "users.User"
